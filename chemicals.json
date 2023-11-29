@@ -1,10 +1,14 @@
 {
-    "APTES": {
-      "Mweight": 221.36,
-      "Density": 0.97
-    },
-    "Cyclopropylamine": {
-      "Mweight": 57.08,
-      "Density": 0.76
-    }
+  "APTES": {
+    "Mweight": 221.36,
+    "Density": 0.97
+  },
+  "Cyclopropylamine": {
+    "Mweight": 57.08,
+    "Density": 0.76
+  },
+  "NaOH": {
+    "Mweight": 12.22,
+    "Density": 0.55
   }
+}
