@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>TestEnv</title>
+  </head>
+  <body>
+    <p>This is a Test Env</p>
+    <script>
+        const token = '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'; // 更換成你的個人訪問令牌
+        const owner = 'ylklab'; // 更換成你的 GitHub 使用者名稱
+        const repo = 'ylklab.github.io-testenv'; // 更換成你的存儲庫名稱
+
+        const content = btoa('Hello, GitHub! This is a test.'); // 將文字轉換成 base64 格式
+
+        // 創建或更新檔案的 API 端點
+        const apiUrl = `https://api.github.com/repos/${owner}/${repo}/contents/example.txt`;
+
+        // 創建 fetch 請求的選項
+        const requestOptions = {
+            method: 'PUT',
+            headers: {
+                'Authorization': `token ${token}`,
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+            message: 'Update example.txt via API',
+            content: content,
+            }),
+        };
+
+        // 發送 API 請求
+        fetch(apiUrl, requestOptions)
+            .then(response => response.json())
+            .then(data => {
+                console.log('File updated:', data);
+            })
+            .catch(error => {
+            console.error('Error:', error);
+            });
+    </script>
+  </body>
+</html>
